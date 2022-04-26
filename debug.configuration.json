@@ -1,0 +1,23 @@
+{
+  "projectId" : "2d38rdnbrw@default~testCure",
+  "projectName" : "testCure",
+  "debugMetadata" : [ {
+    "serviceId" : "MyJavaService",
+    "type" : "JAVA_SERVICE",
+    "url" : null,
+    "phases" : [ {
+      "id" : "com.fico.dmp.myjavaservice.MyJavaService",
+      "description" : "com.fico.dmp.myjavaservice.MyJavaService",
+      "name" : "com.fico.dmp.myjavaservice.MyJavaService",
+      "breakPoints" : [ {
+        "info" : null,
+        "line" : 49,
+        "path" : "/services/MyJavaService/src/com/fico/dmp/myjavaservice/MyJavaService.java",
+        "name" : "sampleJavaOperation",
+        "phaseSequence" : 0,
+        "condition" : null,
+        "variables" : null
+      } ]
+    } ]
+  } ]
+}
