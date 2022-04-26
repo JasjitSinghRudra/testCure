@@ -12,6 +12,7 @@ import com.wavemaker.runtime.util.logging.FAWBStaticLoggerBinder;
 import org.springframework.beans.factory.annotation.Autowired;
 
 //comment
+//comment2
 import com.wavemaker.runtime.security.SecurityService;
 import com.wavemaker.runtime.service.annotations.ExposeToClient;
 import com.wavemaker.runtime.service.annotations.HideFromClient;
