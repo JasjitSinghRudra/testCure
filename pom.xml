@@ -525,7 +525,7 @@
         <profile.props.file>development.properties</profile.props.file>
         <spring.version>5.3.18</spring.version>
         <spring.security.version>5.5.3</spring.security.version>
-        <wavemaker.studio.version>3.3</wavemaker.studio.version>
+        <wavemaker.studio.version>4.0</wavemaker.studio.version>
         <DMP_DATA_DIR>/app-root/runtime/data</DMP_DATA_DIR>
         <JWS_HOME>/opt/webserver</JWS_HOME>
         <fawb.host.prefix>fawb</fawb.host.prefix>
