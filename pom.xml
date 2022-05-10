@@ -20,13 +20,6 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
-                <directory>services/MyJavaService1/src</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-            <resource>
-                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -119,7 +112,6 @@
                         <configuration>
                             <sources>
                                 <source>services/MyJavaService/src</source>
-                                <source>services/MyJavaService1/src</source>
                                 <source>services/securityService/src</source>
                             </sources>
                         </configuration>
