@@ -1,0 +1,102 @@
+{
+  "cascadeEnabled" : false,
+  "description" : "test_jasjit_45",
+  "draft" : true,
+  "name" : "test_jasjit_45",
+  "packageName" : "com.fico.dmp.test_jasjit_45",
+  "tables" : [ {
+    "catalog" : null,
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "encrypted" : false,
+      "fieldName" : "id",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : "",
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 255,
+      "mask" : {
+        "type" : "NONE"
+      },
+      "name" : "ID",
+      "nullable" : false,
+      "oldName" : null,
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfIndex" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "encrypted" : false,
+      "fieldName" : "title",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "string",
+      "length" : 255,
+      "mask" : {
+        "type" : "NONE"
+      },
+      "name" : "Title",
+      "nullable" : true,
+      "oldName" : null,
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfIndex" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    } ],
+    "constraints" : [ ],
+    "entityName" : "Book",
+    "filter" : null,
+    "fullyQualifiedName" : "com.fico.dmp.test_jasjit_45.Book",
+    "ignoreRefreshAfterInsert" : false,
+    "indexes" : [ ],
+    "name" : "Book",
+    "oldName" : null,
+    "primaryKey" : {
+      "columns" : [ "ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : "",
+        "schemaName" : null
+      },
+      "name" : null,
+      "virtual" : false
+    },
+    "relations" : [ ],
+    "schema" : null,
+    "temporals" : [ ],
+    "type" : "TABLE"
+  } ]
+}

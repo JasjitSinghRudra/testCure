@@ -1,0 +1,8 @@
+-- MIGRATION SCRIPT
+-- Database Type: DBType{type='mysql', urlScheme='jdbc:', dialect='org.hibernate.dialect.MySQLDialect', driverClass='org.mariadb.jdbc.Driver'}
+-- App Name: testCure
+-- Database: test_jasjit_45
+-- Created At: 18-May-2022 18:56:45.UTC
+-- Script Version: 1.1
+-- -----------------------------------------------------------------
+-- USER SQL SCRIPT
