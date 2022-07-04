@@ -60,14 +60,14 @@
                                         <versionRange>[1.7,)</versionRange>
                                         <goals>
                                             <goal>run</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
+                    </goals>
+                  </pluginExecutionFilter>
                                     <action>
                                         <ignore/>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -79,17 +79,15 @@
         </pluginManagement>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.0.1</version>
                 <configuration>
                     <nonFilteredFileExtensions>
                         <nonFilteredFileExtension>jks</nonFilteredFileExtension>
-                    </nonFilteredFileExtensions>
+          </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>2.4.1</version>
                 <executions>
@@ -102,14 +100,14 @@
                     <filesets>
                         <fileset>
                             <directory>${basedir}/src/main/webapp/WEB-INF/lib</directory>
-                        </fileset>
+            </fileset>
                         <fileset>
                             <directory>${basedir}/src/main/webapp/WEB-INF/classes</directory>
-                        </fileset>
+            </fileset>
                         <fileset>
                             <directory>${basedir}/jib-target</directory>
-                        </fileset>
-                    </filesets>
+            </fileset>
+          </filesets>
                 </configuration>
             </plugin>
             <plugin>
@@ -134,7 +132,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
                 <executions>
@@ -147,13 +144,12 @@
                         <configuration>
                             <target>
                                 <ant antfile="${basedir}/build.xml" target="init"/>
-                            </target>
+              </target>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
@@ -164,7 +160,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.10</version>
                 <executions>
@@ -183,8 +178,8 @@
                                     <version>${wavemaker.studio.version}</version>
                                     <classifier>wmapp</classifier>
                                     <type>zip</type>
-                                </artifactItem>
-                            </artifactItems>
+                </artifactItem>
+              </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
@@ -258,7 +253,7 @@
                                 <configuration>
                                     <target>
                                         <ant antfile="${basedir}/build.xml" target="generate-component-config"/>
-                                    </target>
+                  </target>
                                 </configuration>
                             </execution>
                         </executions>
@@ -276,7 +271,7 @@
                         <configuration>
                             <descriptors>
                                 <descriptor>src/assembly/bin.xml</descriptor>
-                            </descriptors>
+              </descriptors>
                             <finalName>${project.artifactId}-archetype</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
@@ -295,7 +290,6 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-antrun-plugin</artifactId>
                         <version>1.7</version>
                         <executions>
@@ -308,7 +302,7 @@
                                 <configuration>
                                     <target>
                                         <ant antfile="${basedir}/build.xml" target="generate-jib-artifacts"/>
-                                    </target>
+                  </target>
                                 </configuration>
                             </execution>
                         </executions>
@@ -316,7 +310,7 @@
                     <plugin>
                         <groupId>com.google.cloud.tools</groupId>
                         <artifactId>jib-maven-plugin</artifactId>
-                        <version>1.2.0</version>
+                        <version>2.5.2</version>
                         <executions>
                             <execution>
                                 <phase>install</phase>
@@ -331,38 +325,37 @@
                                 <auth>
                                     <username>${docker.username}</username>
                                     <password>${docker.password}</password>
-                                </auth>
-                            </from>
+                </auth>
+              </from>
                             <to>
                                 <image>${docker.registry}/${dockerImageName}:${image.tag}</image>
                                 <auth>
                                     <username>${docker.username}</username>
                                     <password>${docker.password}</password>
-                                </auth>
-                            </to>
+                </auth>
+              </to>
                             <extraDirectories>
                                 <paths>
                                     <path>${basedir}/jib-target/generated-war/</path>
                                     <path>${basedir}/jib-target/dmp-resources/</path>
-                                </paths>
+                </paths>
                                 <permissions>
                                     <permission>
                                         <file>/app-root/</file>
-                                        <mode>777</mode> 
-                                    </permission>
-                                </permissions>
-                            </extraDirectories>
+                                        <mode>777</mode>
+                  </permission>
+                </permissions>
+              </extraDirectories>
                             <container>
-                                <useCurrentTimestamp>true</useCurrentTimestamp>
                                 <jvmFlags>
                                     <jvmFlag>-Xms512m</jvmFlag>
                                     <jvmFlag>-Xdebug</jvmFlag>
                                     <jvmFlag>-Xmy:flag=jib-rules</jvmFlag>
                                     <jvmFlag>-Dspring.profiles.active=dmp</jvmFlag>
-                                </jvmFlags>
+                </jvmFlags>
                                 <ports>
                                     <port>8000</port>
-                                </ports>
+                </ports>
                                 <environment>
                                     <DMP_DATA_DIR>${DMP_DATA_DIR}</DMP_DATA_DIR>
                                     <DMP_REPO_DIR>/app-root/runtime/repo</DMP_REPO_DIR>
@@ -374,7 +367,7 @@
                                     <dmp.context.strategy>MODE_INHERITABLETHREADLOCAL</dmp.context.strategy>
                                     <JAVA_OPTIONS>-XX:MaxMetaspaceSize=512m</JAVA_OPTIONS>
                                     <FAWB_API_VERSION>${fawb.platform.api.version}</FAWB_API_VERSION>
-                                </environment>
+                </environment>
                                 <labels>
                                     <project.owner.name>${project.owner.name}</project.owner.name>
                                     <project.owner.email>${project.owner.email}</project.owner.email>
@@ -383,14 +376,14 @@
                                     <created.by>${created.by}</created.by>
                                     <created.at>${created.at}</created.at>
                                     <maintainer>paulwehlage@fico.com</maintainer>
-                                </labels>
+                </labels>
                                 <user>root</user>
-                            </container>
+                                <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
+              </container>
                             <allowInsecureRegistries>true</allowInsecureRegistries>
                         </configuration>
                     </plugin>
                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
                         <executions>
                             <execution>
@@ -403,7 +396,7 @@
                         <configuration>
                             <descriptors>
                                 <descriptor>src/assembly/bin.xml</descriptor>
-                            </descriptors>
+              </descriptors>
                             <finalName>${archetype.archive.name}</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                         </configuration>
@@ -435,7 +428,6 @@
             <id>central</id>
             <name>Maven Repository Switchboard</name>
             <url>https://repo1.maven.org/maven2</url>
-            <layout>default</layout>
         </repository>
         <repository>
             <releases>
@@ -527,14 +519,14 @@
         </dependencies>
     </dependencyManagement>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.lib.directory>${basedir}/lib</project.lib.directory>
-        <profile.props.file>development.properties</profile.props.file>
-        <spring.version>5.3.20</spring.version>
-        <spring.security.version>5.7.1</spring.security.version>
         <wavemaker.studio.version>4.0</wavemaker.studio.version>
+        <spring.security.version>5.7.1</spring.security.version>
+        <profile.props.file>development.properties</profile.props.file>
         <DMP_DATA_DIR>/app-root/runtime/data</DMP_DATA_DIR>
-        <JWS_HOME>/opt/webserver</JWS_HOME>
         <fawb.host.prefix>fawb</fawb.host.prefix>
+        <project.lib.directory>${basedir}/lib</project.lib.directory>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <JWS_HOME>/opt/webserver</JWS_HOME>
+        <spring.version>5.3.21</spring.version>
     </properties>
 </project>
